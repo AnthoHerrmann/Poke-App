@@ -1,0 +1,48 @@
+<div *ngIf="currentPkmn" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center">{{currentPkmn.name}}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-image">
+                <img [src]="currentPkmn.picture">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                            <tr>
+                                <td>Nom</td>
+                                <td><strong>{{currentPkmn.name}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Points de vie</td>
+                                <td><strong>{{currentPkmn.hp}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Dégâts</td>
+                                <td><strong>{{currentPkmn.dmg}}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Types</td>
+                                <td>
+                                    <span *ngFor="let type of currentPkmn.types" class="{{type | colorTypePokemon}}">{{type}}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Date de création</td>
+                                <td><em>{{currentPkmn.created | date:"dd/MM/yyyy"}}</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a routerLink="/pokemons">Retour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf='!currentPkmn' class="center">
+    <img src="/sad-pikachu.png" class="pokeInconnu"/>
+    <h4 id="pokeNonTrouve">Excusez-nous, nous n'avons pas trouvé ce pokémon...</h4>
+    <button routerLink="/pokemons">Retourner à l'accueil</button>
+</div>
