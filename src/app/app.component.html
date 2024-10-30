@@ -3,14 +3,15 @@
 <div class="container">
     <div class="row">
         <div *ngFor="let pokemon of pokemonList" class="col m4 s6">
-            <div class="card horizontal">
+            <div class="card horizontal" (click)="selectPokemon(pokemon.id)" pkmnBorderCard="#f58e0b">
                 <div class="card-image">
                     <img [src]="pokemon.picture"/>
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>{{pokemon.name}}</p>
-                        <p><small>{{pokemon.created}}</small></p>
+                        <p><small>{{pokemon.created | date:"MMM d, y" | uppercase}}</small></p>
+                        <span *ngFor="let type of pokemon.types" class="{{type | colorTypePokemon}}">{{type}}</span>
                     </div>
                 </div>
             </div>
