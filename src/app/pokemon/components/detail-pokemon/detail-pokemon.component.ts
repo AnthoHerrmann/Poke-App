@@ -21,4 +21,12 @@ export class DetailPokemonComponent implements OnInit {
       this.currentPkmn = this.pokemonService.getPokemonById(Number(pokemonId));
     }
   }
+
+  goToPokemonList() {
+    this.router.navigate(['/pokemons']);
+  }
+
+  goToEditPokemon(pokemon: Pokemon): void {
+    this.router.navigate(['/edit/pokemon/', pokemon.id]);
+  }
 }

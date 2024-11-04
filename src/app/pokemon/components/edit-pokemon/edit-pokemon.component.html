@@ -1,0 +1,12 @@
+<div *ngIf="pokemon" class="center">
+    <h2>Page d'édition de {{pokemon.name}}</h2>
+    <p class="center">
+        <img [src]="pokemon.picture">
+        <app-pokemon-form [pokemon]="pokemon"></app-pokemon-form>
+    </p>
+</div>
+<div *ngIf="!pokemon" class="center">
+    <img src="/sad-pikachu.png" class="pokeInconnu"/>
+    <h3 id="pokeNonTrouve">Ce pokémon n'existe pas et ne peut donc être édité...</h3>
+    <button routerLink="/pokemons">Retourner à l'accueil</button>
+</div>
