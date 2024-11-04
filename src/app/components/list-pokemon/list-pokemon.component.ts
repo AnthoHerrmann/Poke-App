@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Pokemon } from '../models/pokemon.model';
-import { POKEMONS } from '../../../Poke-BD/mock-pokemon-list';
+import { Pokemon } from '../../models/pokemon.model';
+import { POKEMONS } from '../../../../Poke-BD/mock-pokemon-list';
 
 @Component({
   selector: 'app-list-pokemon',
