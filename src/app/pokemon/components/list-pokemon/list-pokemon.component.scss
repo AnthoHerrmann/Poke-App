@@ -6,3 +6,16 @@
 .card {
     color: black;
 }
+
+#addButton {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: rgb(0, 180, 255);
+    font-weight: bold;
+    font-size: x-large;
+    &:active {
+        background-color: rgb(0, 15, 255);
+        transform: translate(1px, 1px);
+    }
+}

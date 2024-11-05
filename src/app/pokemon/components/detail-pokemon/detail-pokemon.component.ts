@@ -18,15 +18,21 @@ export class DetailPokemonComponent implements OnInit {
     const pokemonId: string | null = this.route.snapshot.paramMap.get('id');
     
     if (pokemonId) {
-      this.currentPkmn = this.pokemonService.getPokemonById(Number(pokemonId));
+      this.pokemonService.getPokemonById(Number(pokemonId))
+      .subscribe(pokemon => this.currentPkmn = pokemon);
     }
   }
 
-  goToPokemonList() {
+  goToPokemonList(): void {
     this.router.navigate(['/pokemons']);
   }
 
   goToEditPokemon(pokemon: Pokemon): void {
     this.router.navigate(['/edit/pokemon/', pokemon.id]);
+  }
+
+  deletePokemon(pokemon: Pokemon): void {
+    this.pokemonService.deletePokemonById(pokemon.id).subscribe(
+      () => this.goToPokemonList());
   }
 }
