@@ -61,12 +61,12 @@
     
                 <!-- Pokemon types -->
                 <form class="form-group">
-                    <label for="types">Types</label>
+                    <label>Types</label>
                     <p *ngFor="let type of typePokemonList">
-                        <label>
+                        <label for="{{type}}">
                             <input type="checkbox"
                                 class="filled-in"
-                                id="{{ type }}"
+                                id="{{type}}"
                                 [value]="type"
                                 [checked]="hasType(type)"
                                 [disabled]="!isTypesValid(type)"
