@@ -92,7 +92,5 @@
     </div>
 </form>
 <div *ngIf='!pokemon' class="center">
-    <img src="/sad-pikachu.png" class="pokeInconnu"/>
-    <h3 id="pokeNonTrouve">Ce pokémon n'existe pas et ne peut donc être édité...</h3>
-    <button id="accueilBouton" routerLink="/pokemons">Retourner à l'accueil</button>
+    <app-loader></app-loader>
 </div>

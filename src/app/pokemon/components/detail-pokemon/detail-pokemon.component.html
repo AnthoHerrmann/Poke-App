@@ -44,7 +44,5 @@
     </div>
 </div>
 <div *ngIf='!currentPkmn' class="center">
-    <img src="/sad-pikachu.png" class="pokeInconnu"/>
-    <h4 id="pokeNonTrouve">Excusez-nous, nous n'avons pas trouvé ce pokémon...</h4>
-    <button routerLink="/pokemons">Retourner à l'accueil</button>
+    <app-loader></app-loader>
 </div>
