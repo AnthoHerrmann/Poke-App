@@ -83,8 +83,12 @@
                 <!-- Submit button -->
                 <div class="form-group">
                     <div class="divider"></div>
-                    <div class="section center">
-                        <button type="submit" class="waves-effect waves-light btn" [disabled]="!pokemonForm.form.valid">Valider</button>
+                    <div class="section">
+                        <div class="row">
+                            <button type="submit" class="waves-effect waves-light btn actionButton" [disabled]="!pokemonForm.form.valid">Valider</button>
+                            <button *ngIf="!isAddForm" class="waves-effect waves-light btn actionButton" routerLink="/pokemon/{{pokemon.id}}">Annuler</button>
+                            <button *ngIf="isAddForm" class="waves-effect waves-light btn actionButton" routerLink="/pokemons">Annuler</button>
+                        </div>
                     </div>
                 </div>
             </div>

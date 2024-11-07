@@ -4,7 +4,7 @@
             <div class="card-content center">
                 <span class="cardTitle">Page de connexion</span>
                     <p id="messageElement">{{message}}</p>
-                <form #loginForm="ngForm">
+                <form #loginForm="ngForm" (keyup.enter)="login()">
                     <div>
                         <label for="identifiant">Identifiant</label>
                         <input type="text" id="identifiant" [(ngModel)]="identifiant" name="identifiant" required>

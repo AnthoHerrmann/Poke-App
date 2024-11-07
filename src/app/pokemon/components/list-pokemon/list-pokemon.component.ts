@@ -16,7 +16,10 @@ export class ListPokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.pokemonService.getPokemonList()
-    .subscribe(pokemonlist => this.pokemonList = pokemonlist);
+    .subscribe(pokemonlist => {
+      this.pokemonList = pokemonlist;
+      this.pokemonList.sort((pokemonLinkPicture1, pokemonLinkPicture2) => pokemonLinkPicture1.picture.localeCompare(pokemonLinkPicture2.picture));
+    });
   }
 
   logout() {
